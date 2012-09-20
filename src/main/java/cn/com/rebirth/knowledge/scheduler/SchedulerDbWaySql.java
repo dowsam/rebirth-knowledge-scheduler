@@ -45,7 +45,7 @@ public class SchedulerDbWaySql extends DbWaySql {
 		}
 		entity.setMethodName(methodName);
 		SysLogEntity sysLogEntity = new SysLogEntity();
-		sysLogEntity.setLogContext(getLogMessage(entity).getBytes());
+		sysLogEntity.setLogContext(getLogMessage(entity));
 		logger.debug("Log Info:" + sysLogEntity.getAppIp() + "," + sysLogEntity.getAppName() + ","
 				+ sysLogEntity.getCreateTime());
 		LogService logService = ConsumerProxyFactory.getInstance().proxy(LogService.class);
